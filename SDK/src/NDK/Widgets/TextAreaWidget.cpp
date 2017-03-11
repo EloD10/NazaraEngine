@@ -133,7 +133,7 @@ namespace Ndk
 				if (ignoreDefaultAction)
 					break;
 
-				//TODO
+				MoveCursor(-1);
 				break;
 			}
 
@@ -169,7 +169,7 @@ namespace Ndk
 				if (ignoreDefaultAction)
 					break;
 
-				//TODO
+				MoveCursor(1);
 				break;
 			}
 		}
