@@ -71,9 +71,9 @@ namespace Ndk
 
 			if (glyphCount > 1) {
 				for (std::size_t i = 0; i < glyphCount; ++i) {
-					if (offset == 0)
+					if (offset == 1)
 						SetCursorPosition(m_cursorPosition += (i + 1));
-					else if (offset == 1)
+					else if (offset == -1)
 						SetCursorPosition(m_cursorPosition += (i - 1));
 				}
 			}
