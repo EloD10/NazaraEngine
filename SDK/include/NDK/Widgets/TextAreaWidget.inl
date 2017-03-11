@@ -62,6 +62,22 @@ namespace Ndk
 			else
 				SetCursorPosition(m_cursorPosition - nOffset);
 		}
+		
+		if (Nz::Keyboard::Up || Nz::Keyboard::Down) {
+
+			auto glyphLineUse = m_drawer.GetGlyph(m_cursorPosition);
+			std::size_t glyphCount = m_drawer.GetGlyphCount();
+
+
+			if (glyphCount > 1) {
+				for (std::size_t i = 0; i < glyphCount; ++i) {
+					if (offset == 0)
+						SetCursorPosition(m_cursorPosition += (i + 1));
+					else if (offset == 1)
+						SetCursorPosition(m_cursorPosition += (i - 1));
+				}
+			}
+		}
 	}
 
 	inline void TextAreaWidget::SetCursorPosition(std::size_t cursorPosition)
